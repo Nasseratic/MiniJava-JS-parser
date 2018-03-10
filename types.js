@@ -1,27 +1,27 @@
 module.exports = [
     {
-        name: 'INTEGRAL_LITERAL',
-        reg: /[ \*\/\-\+]\d+/g
+        name: 'FLOAT_LITERAL',
+        reg: /([ \*\/\-\+\=])(\d+\.\d+)/g
     },
     {
-        name: 'FLOAT_LITERAL',
-        reg: /[ \*\/\-\+]\d+\.\d+/g
+        name: 'INTEGRAL_LITERAL',
+        reg: /([ \*\/\-\+\=]|^)(\d+)/g
     },
     {
         name: 'STRING_LITERAL',
-        reg: /\"(\\\"|[^\"])*\"/g
+        reg: /()(\"(\\\"|[^\"])*\")/g
     },
     {
         name: 'S_COMMENTS',
-        reg: /\/\/.*\n?/g
+        reg: /()(\/\/.*\n?)/g
     },
     {
         name: 'M_COMMENTS',
-        reg: /\/\*[^\*\/]*\*\//g
+        reg: /()(\/\*[^\*\/]*\*\/)/g
     },
     {
         name: 'A_CHAR',
         // we can allow \n chars 
-        reg: /\'(\\.|[^\'])?\'/g
+        reg: /()(\'(\\.|[^\'])?\')/g
     },
 ];

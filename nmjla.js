@@ -11,13 +11,14 @@ const id = /[a-zA-z]\w*/g;
 let allTokens = [];
 
 // the source code  
-let str = "class** if elsemyclass{}; \" jddasj \"  int x5 for i=1\n";
+let str = "class** nh if elsemyclass{};  /* kdjaskj */ \"jddasj\" 9-9 5.6 9 int x5 for i=1\n";
 
-
-// collect operations
-operations.forEach(e =>{
+// collect reserved words
+types.forEach(e =>{
     while (match = e.reg.exec(str)) {
-        allTokens.push({index:match.index , type: e.name , token: match.toString() });
+        let matched = match[2] ? match[2].toString() : match.toString();
+        allTokens.push({index:match.index , type: e.name , token: matched  });
+        str = str.replace(  matched , ' '.repeat( matched.length ) );
     }
 });
 
@@ -28,10 +29,17 @@ reservedWords.all.forEach(e =>{
     }
 });
 
+// collect operations
+operations.forEach(e =>{
+    while (match = e.reg.exec(str)) {
+        allTokens.push({index:match.index , type: e.name , token: match.toString() });
+    }
+});
+
 // collect ids
 while (match = id.exec(str)) {
     if(new RegExp(reservedWords.sum,'g').exec(match.toString()).index != 1){
-        allTokens.push({index:match.index, type: 'ID' , token: match.toString() });
+        allTokens.push({index:match.index, type: 'ID' , token: match[0].toString() });
     }
 }
 
@@ -40,4 +48,5 @@ allTokens.sort( (a,b) => a.index - b.index );
 
 allTokens.forEach( e => {
     console.log( '< '+e.type +' > : \n'+ e.token );
+    console.log("----------------------------------");    
 });
