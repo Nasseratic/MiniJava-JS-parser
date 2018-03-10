@@ -2,7 +2,7 @@
 ## Nasser's Mini-Java Lexical Analyzer 
 
 ### Files:
-- nla.js  :`the app`
+- nmjla.js  :`the app`
 - operations :`set of regexps to match operations `
 - types  :`set of regexps to match types`
 - reservedWords   :`set of regexps to match reserved words`
