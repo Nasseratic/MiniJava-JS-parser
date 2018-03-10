@@ -1,5 +1,5 @@
-# NLA.JS 
-## Nasser's Lexical Analyzer 
+# NMJLA.JS 
+## Nasser's Mini-Java Lexical Analyzer 
 
 ### Files:
 - nla.js  :`the app`
