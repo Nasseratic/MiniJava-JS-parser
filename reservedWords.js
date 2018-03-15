@@ -88,7 +88,7 @@ function all(){
         },
         {
             name: 'STRING',
-            reg: /string/g
+            reg: /String/g
         },
         {
             name: 'FLOAT',
@@ -209,10 +209,6 @@ function all(){
         {
             name: 'TRY',
             reg: /try/g
-        },
-        {
-            name: 'SYSTEM.OUT.PRINTLN',
-            reg: /system\.out\.print/g
         }
     ];
 }

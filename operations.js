@@ -64,6 +64,11 @@ module.exports = [
         reg: /\*/g
     },
     {
+        name: 'DIV',
+        reg: /\//g
+    }
+    ,
+    {
         name: 'LESSTHAN',
         reg: /\</g
     },
